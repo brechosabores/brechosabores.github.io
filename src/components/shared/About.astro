@@ -1,0 +1,77 @@
+---
+import img from "@/assets/about-img.png";
+import { Image } from "astro:assets";
+import { Award, Heart, Users } from "lucide-react";
+---
+
+<section id="sobre" class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Image */}
+      <div class="relative order-2 lg:order-1">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-muted">
+          <Image
+            src={img}
+            alt="Preparando salgados"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Content */}
+      <div class="space-y-8 order-1 lg:order-2">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-balance">
+            Tradição e <span class="text-primary">qualidade</span> em cada salgado
+          </h2>
+          <p class="text-xl text-muted-foreground leading-relaxed text-pretty">
+            Há mais de 10 anos levando o sabor autêntico da cozinha mineira para
+            as mesas de Uberaba. Nossos salgados são feitos diariamente com
+            ingredientes selecionados e muito amor.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 p-3 rounded-xl">
+              <Heart className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Feito com carinho</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Cada salgado é preparado artesanalmente, seguindo receitas
+                tradicionais da família
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-secondary/20 p-3 rounded-xl">
+              <Award className="w-6 h-6 text-secondary-foreground" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Ingredientes premium</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Selecionamos os melhores ingredientes para garantir sabor e
+                qualidade
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 p-3 rounded-xl">
+              <Users className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Atendimento personalizado</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Trabalhamos com encomendas para festas e eventos de todos os
+                tamanhos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

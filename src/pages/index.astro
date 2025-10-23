@@ -1,23 +1,12 @@
 ---
-import Footer from "@/components/shared/Footer.astro";
-import Header from "@/components/shared/Header.astro";
+import About from "@/components/shared/About.astro";
 import Hero from "@/components/shared/Hero.astro";
+import Main from "@/layouts/main.astro";
+
 import "../styles/global.css";
 ---
 
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Brecho Sabores</title>
-  </head>
-
-  <body>
-    <Header />
-    <slot />
-    <Hero />
-    <Footer />
-  </body>
-</html>
+<Main title="Delícias Brechó">
+  <Hero />
+  <About />
+</Main>
