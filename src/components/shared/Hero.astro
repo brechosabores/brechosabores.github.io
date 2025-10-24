@@ -2,6 +2,8 @@
 import { ArrowRight, Clock, MapPin } from "@lucide/astro";
 import { Button } from "../ui/button";
 
+import { SiWhatsapp } from "react-icons/si";
+
 import img from "@/assets/hero-img.png";
 import { Image } from "astro:assets";
 ---
@@ -32,20 +34,29 @@ import { Image } from "astro:assets";
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg h-14 px-8"
+          <a
+            href="https://api.whatsapp.com/send?phone=5534997966699&text=Ol%C3%A1!%20Gostaria%20de%20ver%20o%20card%C3%A1pio%20e%20fazer%20um%20pedido."
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Ver Cardápio
-            <ArrowRight class="w-5 h-5 ml-2" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-lg h-14 px-8 border-2 bg-transparent"
-          >
-            Fale Conosco
-          </Button>
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white text-lg h-14 px-8"
+            >
+              <SiWhatsapp className="w-5 h-5 mr-2" />
+              WhatsApp
+              <ArrowRight class="w-5 h-5 ml-2" />
+            </Button>
+          </a>
+          <a href="#produtos">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg h-14 px-8 border-2 bg-transparent"
+            >
+              Conhecer Mais
+            </Button>
+          </a>
         </div>
 
         {/* Info Cards */}

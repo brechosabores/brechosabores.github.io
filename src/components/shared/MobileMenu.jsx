@@ -1,6 +1,5 @@
 // src/components/MobileMenu.jsx
-import { Button } from "@/components/ui/button";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 
 export function MobileMenu() {
@@ -46,10 +45,6 @@ export function MobileMenu() {
             >
               Contato
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-              <Phone className="w-4 h-4 mr-2" />
-              Fazer Pedido
-            </Button>
           </div>
         </nav>
       )}

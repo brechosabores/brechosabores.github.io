@@ -1,6 +1,5 @@
 ---
-import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
-import { SiFacebook, SiInstagram } from "react-icons/si";
+import { Clock, MapPin, Phone } from "@lucide/astro";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 ---
@@ -26,7 +25,7 @@ import { Card, CardContent } from "../ui/card";
             </div>
             <div>
               <h3 class="font-bold text-lg mb-1">Telefone / WhatsApp</h3>
-              <p class="text-muted-foreground">(34) 99999-9999</p>
+              <p class="text-muted-foreground">+55 (34) 99796-6699</p>
             </div>
           </CardContent>
         </Card>
@@ -38,7 +37,9 @@ import { Card, CardContent } from "../ui/card";
             </div>
             <div>
               <h3 class="font-bold text-lg mb-1">Endereço</h3>
-              <p class="text-muted-foreground">Uberaba, Minas Gerais</p>
+              <p class="text-muted-foreground">
+                Bairro Cidade Nova - Uberaba, Minas Gerais
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -55,29 +56,6 @@ import { Card, CardContent } from "../ui/card";
             </div>
           </CardContent>
         </Card>
-
-        <Card className="border-2">
-          <CardContent className="p-6 flex items-start gap-4">
-            <div class="bg-secondary/20 p-3 rounded-xl">
-              <Mail class="w-6 h-6 text-secondary-foreground" />
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-1">E-mail</h3>
-              <p class="text-muted-foreground">contato@sabormineiro.com.br</p>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div class="flex gap-4 pt-4">
-          <Button size="lg" variant="outline" className="flex-1 bg-transparent">
-            <SiInstagram className="w-5 h-5 mr-2" />
-            Instagram
-          </Button>
-          <Button size="lg" variant="outline" className="flex-1 bg-transparent">
-            <SiFacebook className="w-5 h-5 mr-2" />
-            Facebook
-          </Button>
-        </div>
       </div>
 
       {/* CTA Card */}
@@ -92,13 +70,18 @@ import { Card, CardContent } from "../ui/card";
           deliciosos. Atendemos encomendas para festas, eventos e entregas
           diárias!
         </p>
-        <Button
-          size="lg"
-          className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg h-14 w-full"
+        <a
+          href="https://api.whatsapp.com/send?phone=5534997966699&text=Ol%C3%A1!%20Gostaria%20de%20ver%20o%20card%C3%A1pio%20e%20fazer%20um%20pedido."
         >
-          <Phone class="w-5 h-5 mr-2" />
-          Pedir pelo WhatsApp
-        </Button>
+          <Button
+            size="lg"
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg h-14 w-full"
+          >
+            <Phone class="w-5 h-5 mr-2" />
+            Pedir pelo WhatsApp
+          </Button>
+        </a>
+
         <p class="text-sm opacity-90 text-center">
           Pedidos com antecedência garantem melhor atendimento
         </p>
