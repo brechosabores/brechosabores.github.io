@@ -6,9 +6,51 @@ import Products from "@/components/shared/Products.astro";
 import Testimonials from "@/components/shared/Testimonials.astro";
 import Main from "@/layouts/main.astro";
 import "../styles/global.css";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  name: "Brecho Sabores",
+  description:
+    "Encomenda de salgados artesanais em Uberaba. Coxinha, pastel, quibe e mais. 10+ variedades. Tradição mineira e ingredientes premium.",
+  url:
+    typeof Astro !== "undefined" && Astro.site
+      ? Astro.site.href
+      : "https://example.com",
+  image: new URL("/android-chrome-512x512.png", Astro.site).href,
+  telephone: "+5534997966699",
+  servesCuisine: "Mineira",
+  priceRange: "$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Uberaba",
+    addressRegion: "MG",
+    addressCountry: "BR",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "07:00",
+      closes: "19:00",
+    },
+  ],
+  acceptsReservations: "True",
+};
 ---
 
-<Main title="Delícias Brechó">
+<Main
+  title="Delícias Brechó"
+  description="Brecho Sabores - Salgados Na Cidade de Uberaba MG"
+  jsonSchema={schema}
+>
   <Hero />
   <Products />
   <About />

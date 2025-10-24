@@ -1,0 +1,40 @@
+---
+import { SEO } from "astro-seo";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  jsonLdSchema?: any;
+}
+
+const {
+  title,
+  description,
+  image = "/android-chrome-192x192.png",
+  noindex = false,
+  jsonLdSchema,
+} = Astro.props;
+---
+
+<SEO
+  title={title}
+  description={description}
+  noindex={noindex}
+  openGraph={{
+    basic: {
+      title: title,
+      type: "website",
+      image: new URL(image, Astro.site).href,
+      url: Astro.url,
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    image: new URL(image, Astro.site).href,
+  }}
+  jsonLdSchema?={jsonLdSchema}
+/>

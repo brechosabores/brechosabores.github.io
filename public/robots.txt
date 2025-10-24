@@ -1,0 +1,6 @@
+# Permite que todos os robôs acessem tudo
+User-agent: *
+Allow: /
+
+# Localização do seu sitemap
+Sitemap: https://brechosabores.github.io/sitemap-index.xml
