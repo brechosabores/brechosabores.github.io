@@ -1,0 +1,108 @@
+---
+import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
+import { SiFacebook, SiInstagram } from "react-icons/si";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
+---
+
+<section id="contato" class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-balance">
+        Faça seu <span class="text-primary">pedido</span>
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Entre em contato e garanta salgados fresquinhos para seu evento
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      {/* Contact Info */}
+      <div class="space-y-6">
+        <Card className="border-2">
+          <CardContent className="p-6 flex items-start gap-4">
+            <div class="bg-primary/10 p-3 rounded-xl">
+              <Phone class="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Telefone / WhatsApp</h3>
+              <p class="text-muted-foreground">(34) 99999-9999</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-2">
+          <CardContent className="p-6 flex items-start gap-4">
+            <div class="bg-secondary/20 p-3 rounded-xl">
+              <MapPin class="w-6 h-6 text-secondary-foreground" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Endereço</h3>
+              <p class="text-muted-foreground">Uberaba, Minas Gerais</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-2">
+          <CardContent className="p-6 flex items-start gap-4">
+            <div class="bg-primary/10 p-3 rounded-xl">
+              <Clock class="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">Horário de Funcionamento</h3>
+              <p class="text-muted-foreground">Segunda a Sábado: 7h às 19h</p>
+              <p class="text-muted-foreground">Domingo: Fechado</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-2">
+          <CardContent className="p-6 flex items-start gap-4">
+            <div class="bg-secondary/20 p-3 rounded-xl">
+              <Mail class="w-6 h-6 text-secondary-foreground" />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-1">E-mail</h3>
+              <p class="text-muted-foreground">contato@sabormineiro.com.br</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div class="flex gap-4 pt-4">
+          <Button size="lg" variant="outline" className="flex-1 bg-transparent">
+            <SiInstagram className="w-5 h-5 mr-2" />
+            Instagram
+          </Button>
+          <Button size="lg" variant="outline" className="flex-1 bg-transparent">
+            <SiFacebook className="w-5 h-5 mr-2" />
+            Facebook
+          </Button>
+        </div>
+      </div>
+
+      {/* CTA Card */}
+      <div
+        class="bg-primary text-primary-foreground rounded-3xl p-8 lg:p-12 flex flex-col justify-center space-y-6"
+      >
+        <h3 class="text-3xl md:text-4xl font-bold text-balance">
+          Pronto para saborear?
+        </h3>
+        <p class="text-lg leading-relaxed opacity-95 text-pretty">
+          Faça seu pedido agora pelo WhatsApp e receba salgados fresquinhos e
+          deliciosos. Atendemos encomendas para festas, eventos e entregas
+          diárias!
+        </p>
+        <Button
+          size="lg"
+          className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg h-14 w-full"
+        >
+          <Phone class="w-5 h-5 mr-2" />
+          Pedir pelo WhatsApp
+        </Button>
+        <p class="text-sm opacity-90 text-center">
+          Pedidos com antecedência garantem melhor atendimento
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

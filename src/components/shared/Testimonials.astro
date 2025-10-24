@@ -1,0 +1,55 @@
+---
+import { Star } from "@lucide/astro";
+import { Card, CardContent } from "../ui/card";
+
+const testimonials = [
+  {
+    name: "Maria Silva",
+    text: "Os melhores salgados de Uberaba! Sempre fresquinhos e deliciosos. Perfeitos para as festas da família.",
+    rating: 5,
+  },
+  {
+    name: "João Santos",
+    text: "Qualidade excepcional! As coxinhas são incríveis, massa crocante e recheio generoso. Recomendo muito!",
+    rating: 5,
+  },
+  {
+    name: "Ana Paula",
+    text: "Atendimento maravilhoso e salgados que derretem na boca. Virou tradição nas nossas reuniões!",
+    rating: 5,
+  },
+];
+---
+
+<section class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-balance">
+        O que nossos <span class="text-primary">clientes</span> dizem
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        A satisfação de quem prova é nossa maior recompensa
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        testimonials.map((testimonial, index) => (
+          <Card key={index} className="border-2">
+            <CardContent className="p-6 space-y-4">
+              <div class="flex gap-1">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star class="w-5 h-5 fill-secondary text-secondary" />
+                ))}
+              </div>
+              <p class="text-muted-foreground leading-relaxed italic">
+                "{testimonial.text}"
+              </p>
+              <p class="font-bold text-card-foreground">{testimonial.name}</p>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,101 @@
+---
+import { Card, CardContent } from "@/components/ui/card";
+
+import cheeseBallsImg from "@/assets/cheese-balls-img.png";
+import coxinhaImg from "@/assets/coxinha-img.png";
+import empadaImg from "@/assets/empada-img.png";
+import enroladinhoImg from "@/assets/enroladinho-img.png";
+import pastelImg from "@/assets/pastel-img.png";
+import risoleImg from "@/assets/risole-img.png";
+
+const products = [
+  {
+    name: "Coxinha",
+    description: "Frango desfiado temperado com catupiry cremoso",
+    image: coxinhaImg,
+    popular: true,
+  },
+  {
+    name: "Pastel",
+    description: "Massa crocante com recheios variados",
+    image: pastelImg,
+    popular: true,
+  },
+  {
+    name: "Empada",
+    description: "Massa amanteigada com recheio suculento",
+    image: empadaImg,
+    popular: false,
+  },
+  {
+    name: "Risole",
+    description: "Recheio cremoso envolto em massa dourada",
+    image: risoleImg,
+    popular: false,
+  },
+  {
+    name: "Enroladinho",
+    description: "Presunto e queijo em massa folhada",
+    image: enroladinhoImg,
+    popular: true,
+  },
+  {
+    name: "Bolinha de Queijo",
+    description: "Queijo derretido por dentro, crocante por fora",
+    image: cheeseBallsImg,
+    popular: false,
+  },
+];
+---
+
+<section id="produtos" class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-balance">
+        Nossos <span class="text-primary">Salgados</span>
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Cada salgado é preparado com ingredientes frescos e receitas
+        tradicionais mineiras
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        products.map((product, index) => (
+          <Card
+            key={index}
+            className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-2 hover:border-primary/50"
+          >
+            <div class="relative aspect-square overflow-hidden bg-muted">
+              <img
+                src={product.image?.src || "/placeholder.svg"}
+                alt={product.name}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              {product.popular ? (
+                <div class="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  Popular
+                </div>
+              ) : null}
+            </div>
+            <CardContent className="p-6 space-y-2">
+              <h3 class="text-2xl font-bold text-card-foreground">
+                {product.name}
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                {product.description}
+              </p>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-lg text-muted-foreground mb-6">
+        E muito mais! Entre em contato para conhecer todas as opções
+      </p>
+    </div>
+  </div>
+</section>
